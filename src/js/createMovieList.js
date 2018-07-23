@@ -3,8 +3,8 @@ import {getTopMovie ,movieSearch ,getFavMovieCollectionData ,addCollection} from
 import {eventListner ,addCollectionToFavs ,deleteFavMovieCollectionData} from "./eventListner";
 
 function createMovieSearchPanel(resp){
-    console.log(resp);
-    var showMovieSearchPanelHtml;
+    console.log("there is here ;" +resp);
+    let showMovieSearchPanelHtml= "";
     resp.results.map(searchRecd => {
       showMovieSearchPanelHtml += `
         <div class="col-2 movieContainer" id= ${searchRecd.id}>
@@ -19,7 +19,7 @@ function createMovieSearchPanel(resp){
   //step 2 create movie list
 function createMovieList(res){
   console.log(res);
-  var showTopMoviesHtml = "";
+  let showTopMoviesHtml = "";
   res.results.map(movieRecod => {
       showTopMoviesHtml += `
       <div class="col-2 movieContainer" id= ${movieRecod.id}>
@@ -36,7 +36,7 @@ function createMovieList(res){
 function createCollection(res){
     console.log("inside funtion" );
     console.log(JSON.stringify(res.poster_path));
-    var showCollectionMoviesHtml = "";
+    let showCollectionMoviesHtml = "";
     showCollectionMoviesHtml += `
       <div class="col-12" id= ${res.id}>
           <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/${res.poster_path}" alt="${res.original_title}">
@@ -64,7 +64,7 @@ function createCollection(res){
 
 function createFavCollection(data,callback){
 // console.log("this is createFavCollection" +JSON.stringify(data.value));
-    var collectionName= jQuery("#exampleFormControlSelect1").val();
+    let collectionName= jQuery("#exampleFormControlSelect1").val();
     jQuery.ajax({
             type: "POST",
             data: JSON.stringify(data),

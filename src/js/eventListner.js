@@ -4,7 +4,7 @@ import {createMovieSearchPanel , createMovieList ,createCollection ,createFavCol
 
 function eventListner(){
     jQuery(document).on("click",'#loadMovie',function(e){
-      var pageNo = jQuery(this).attr("pageNumber");
+      let pageNo = jQuery(this).attr("pageNumber");
       pageNo = parseInt(pageNo)+1;
       getTopMovie(pageNo,createMovieList);
       jQuery(this).attr("pageNumber",pageNo);
@@ -12,28 +12,28 @@ function eventListner(){
   
     jQuery(document).on("click",'#searchMovies',function(e){
       e.preventDefault();
-      var moviSear = jQuery('#searchText').val();
+      let moviSear = jQuery('#searchText').val();
       movieSearch(moviSear,createMovieSearchPanel);
     })
   
     jQuery(document).on("click",".collectionButton",function(e){
       e.preventDefault();
-      var movieIdVar = jQuery(this).attr("movieId");
+      let movieIdVar = jQuery(this).attr("movieId");
       console.log("movieID"+ movieIdVar);
       addCollection(movieIdVar,createCollection);
     })
   
     jQuery(document).on("click",".insideCollectionButton",function(e){
       e.preventDefault();
-      var movieIdVar = jQuery(this).attr("movieId");
+      let movieIdVar = jQuery(this).attr("movieId");
       addCollectionToFavs(movieIdVar,createFavCollection);
     })
   
     jQuery(document).on("click",".removeFavCollectionButton",function(e){
       e.preventDefault();
-      var favMovieIdVar = jQuery(this).attr("movieId");
-      var movieGenre = jQuery(this).attr("moviegenre");
-      var favMovieCatergoyVar = jQuery(this).attr("value");
+      let favMovieIdVar = jQuery(this).attr("movieId");
+      let movieGenre = jQuery(this).attr("moviegenre");
+      let favMovieCatergoyVar = jQuery(this).attr("value");
       deleteFavMovieCollectionData(favMovieIdVar,movieGenre);
     })
   }
