@@ -1,9 +1,5 @@
 var jQuery = require('jquery');
 import { addCollection ,getFavMovieCollectionData} from "../services/movieService";
-// import { createMovieList } from "../popularMovies/popularMovie";
-// import { getTopMovie ,movieSearch , addCollection} from "../services/movieService";
-// import { createCollection } from "../popupModal/popupModal";
-// import { createMovieSearchPanel } from "../header/search/search";
 
 function createFavCollection(data,callback){
 	let collectionName= jQuery("#exampleFormControlSelect1").val();

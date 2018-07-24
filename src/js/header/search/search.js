@@ -1,13 +1,4 @@
 var jQuery = require('jQuery');
-// import { addCollection ,getFavMovieCollectionData ,movieSearch ,getTopMovie} from "./services/getMovieService";
-// import { createCollection } from "./popupModal/popupModal";
-
-// import { createMovieList } from "../popularMovies/popularMovie";
-// import { getTopMovie ,movieSearch , addCollection} from "../services/movieService";
-// import { createCollection } from "../popupModal/popupModal";
-// import { createMovieSearchPanel } from "../header/search/search";
-// import { addCollectionToFavs ,deleteFavMovieCollectionData ,createFavCollection} from "../favMovieCollection/favMovieCollection";
-
 
 function createMovieSearchPanel(resp){
 	let showMovieSearchPanelHtml= "";

@@ -1,9 +1,3 @@
-// import { createMovieList } from "../popularMovies/popularMovie";
-// import { getTopMovie ,movieSearch , addCollection} from "../services/movieService";
-// import { createCollection } from "../popupModal/popupModal";
-// import { createMovieSearchPanel } from "../header/search/search";
-// import { addCollectionToFavs ,deleteFavMovieCollectionData ,createFavCollection} from "../favMovieCollection/favMovieCollection";
-
 
 function createCollection(res){
 	let showCollectionMoviesHtml = "";
