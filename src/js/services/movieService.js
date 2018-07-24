@@ -1,4 +1,4 @@
-var jQuery = require('jquery');
+var jQuery = require("jquery");
 
 
 //fetching data from server 1st step 
@@ -9,7 +9,7 @@ function getTopMovie(pageNo,callback){
 				callback(data);
 			})
 				.catch((err) => {
-					console.log(err);
+					console.log("something went wrong while calling get yop movie data");
 				});
 		});
 }
@@ -34,7 +34,7 @@ function getFavMovieCollectionData(){
 				Object.keys(data2).map(function(objectKey, index) { 
 					var value = data2[objectKey];
 					jQuery.each( value, function( j , value1 ) { 
-						console.log(value1);
+						// console.log(value1);
 						createFavCollectionHtml += `
                     <div class="col-2" id= ${value1.id}>
                         <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/${value1.poster_path}" alt="${value1.original_title}" class="img-thumbnail rounded">
@@ -50,7 +50,7 @@ function getFavMovieCollectionData(){
 }
 
 function addCollection(movieIdVar,callback){
-	console.log("this is data!!!!!", movieIdVar);
+	// console.log("this is data!!!!!", movieIdVar);
 	fetch(`https://api.themoviedb.org/3/movie/${movieIdVar}?api_key=7520477c96fad381a44633a2b7596a01&language=en-US`)
 		.then((res3)=> {
 			res3.json().then((data3) =>{
@@ -59,5 +59,5 @@ function addCollection(movieIdVar,callback){
 		});
 }
 
-export {getTopMovie ,movieSearch, getFavMovieCollectionData , addCollection}
+export {getTopMovie ,movieSearch, getFavMovieCollectionData , addCollection};
 

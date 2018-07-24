@@ -1,4 +1,4 @@
-var jQuery = require('jquery');
+var jQuery = require("jquery");
 import { createMovieList } from "../popularMovies/popularMovie";
 import { getTopMovie ,movieSearch , addCollection} from "../services/movieService";
 import { createCollection } from "../popupModal/popupModal";
@@ -23,7 +23,6 @@ export function eventListner(){
 	jQuery(document).on("click",".collectionButton",function(e){
 		e.preventDefault();
 		let movieIdVar = jQuery(this).attr("movieId");
-		console.log("movieID"+ movieIdVar);
 		addCollection(movieIdVar,createCollection);
 	});
   

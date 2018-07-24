@@ -1,4 +1,4 @@
-var jQuery = require('jQuery');
+var jQuery = require("jQuery");
 
 function createMovieSearchPanel(resp){
 	let showMovieSearchPanelHtml= "";
@@ -13,6 +13,6 @@ function createMovieSearchPanel(resp){
 	jQuery("#" + "searchSection").append(showMovieSearchPanelHtml);
 }
 
-export {createMovieSearchPanel}
+export {createMovieSearchPanel};
 
 

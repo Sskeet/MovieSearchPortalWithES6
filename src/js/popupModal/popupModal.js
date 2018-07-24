@@ -25,4 +25,4 @@ function createCollection(res){
 	document.getElementById("insideModalClass").innerHTML= showCollectionMoviesHtml;
 }
 
-export {createCollection}
+export {createCollection};

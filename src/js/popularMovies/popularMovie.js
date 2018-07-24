@@ -1,4 +1,4 @@
-var jQuery = require('jquery');
+var jQuery = require("jquery");
 
 function createMovieList(res){
 	let showTopMoviesHtml = "";
@@ -15,4 +15,4 @@ function createMovieList(res){
 	jQuery("#" + "topMoviesContainer").append(showTopMoviesHtml);
 }
 
-export {createMovieList}
+export {createMovieList};

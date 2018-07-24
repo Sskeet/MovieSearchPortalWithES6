@@ -1,4 +1,4 @@
-var jQuery = require('jquery');
+var jQuery = require("jquery");
 import { addCollection ,getFavMovieCollectionData} from "../services/movieService";
 
 function createFavCollection(data,callback){
@@ -10,7 +10,7 @@ function createFavCollection(data,callback){
 		contentType : "application/json",
 		url: `http://localhost:3001/${collectionName}`,
 		success: function(data){
-			console.log("Data Added Successfully");
+			alert("Data Added Successfully");
 			getFavMovieCollectionData();
 		},
 	});
@@ -27,8 +27,7 @@ function deleteFavMovieCollectionData(favMovieIdVar,movieGenre) {
 }
 
 function addCollectionToFavs(movieIdVar,callback){
-	console.log("this is collection" + movieIdVar);
 	addCollection(movieIdVar,callback);
 }
 
-export {addCollectionToFavs ,deleteFavMovieCollectionData ,createFavCollection}
+export {addCollectionToFavs ,deleteFavMovieCollectionData ,createFavCollection};
