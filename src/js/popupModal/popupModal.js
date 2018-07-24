@@ -10,7 +10,6 @@ function createCollection(res){
                   <label for="exampleFormControlSelect1">Want to add in</label>
                   <select class="form-control" id="exampleFormControlSelect1"  >
                     <option value="Action" id="Action">Action</option>
-                    <option value="Favourates" id="Favourates">Favourates</option>
                     <option value="Adventure" id="Adventure">Adventure</option>
                     <option value="Fantasy" id="Fantasy">Fantasy</option>
                     <option value="Sci-Fi" id="Sci-Fi">Sci-Fi</option>
