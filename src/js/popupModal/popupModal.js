@@ -1,9 +1,9 @@
 
-function createCollection(res){
+function createCollection(res3){
 	let showCollectionMoviesHtml = "";
 	showCollectionMoviesHtml += `
-      <div class="col-12" id= ${res.id}>
-          <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/${res.poster_path}" alt="${res.original_title}">
+      <div class="col-12" id= ${res3.id}>
+          <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/${res3.poster_path}" alt="${res3.original_title}">
           <div class="buttom-panel text-center mt-1">
               <form>
                 <div class="form-group">
@@ -17,7 +17,7 @@ function createCollection(res){
                   </select>
                 </div>
               <form>
-              <button type="button" class="insideCollectionButton btn btn-success" movieId="${res.id}">Done</button>
+              <button type="button" class="insideCollectionButton btn btn-success" movieId="${res3.id}">Done</button>
           </div>
       </div>
       `;

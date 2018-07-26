@@ -12,7 +12,7 @@ function createMovieList(res){
       </div>
       `;
 	});
-	jQuery("#" + "topMoviesContainer").append(showTopMoviesHtml);
+	jQuery("#topMoviesContainer").append(showTopMoviesHtml);
 }
 
 export {createMovieList};

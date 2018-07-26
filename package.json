@@ -37,8 +37,10 @@
   },
   "dependencies": {
     "Babel": "0.0.1",
+    "babel-preset-stage-0": "^6.24.1",
     "bootstrap": "^4.1.2",
     "popper.js": "^1.14.3",
+    "redux": "^4.0.0",
     "style": "0.0.3",
     "webpack-cli": "^3.0.8"
   }

@@ -1,5 +1,24 @@
 var jQuery = require("jquery");
-import { addCollection ,getFavMovieCollectionData} from "../services/movieService";
+import { addCollection ,getFavMovieCollectionData } from "../services/movieService";
+
+
+function createFavMovieCollection(res2){
+	let createFavCollectionHtml = "";
+	Object.keys(res2).map(function(objectKey) { 
+		var value = res2[objectKey];
+		jQuery.each( value, function( j , value1 ) { 
+			// console.log(value1);
+			createFavCollectionHtml += `
+		<div class="col-2" id= ${value1.id}>
+			<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/${value1.poster_path}" alt="${value1.original_title}" class="img-thumbnail rounded">
+			<div class="buttom-panel text-center mt-1">
+				<button type="button" class="removeFavCollectionButton btn btn-success" movieGenre="${objectKey}" movieId="${value1.id}">Remove</button>
+			</div>
+		</div>`;
+		});
+	});
+	jQuery("#" + "favMovies").html(createFavCollectionHtml);
+}
 
 function createFavCollection(data,callback){
 	let collectionName= jQuery("#exampleFormControlSelect1").val();
@@ -10,6 +29,7 @@ function createFavCollection(data,callback){
 		contentType : "application/json",
 		url: `http://localhost:3001/${collectionName}`,
 		success: function(data){
+			//movieStore.dispatch({type: MOVIE_ADDED_TO_DB, data: data});
 			alert("Data Added Successfully");
 			getFavMovieCollectionData();
 		},
@@ -30,4 +50,4 @@ function addCollectionToFavs(movieIdVar,callback){
 	addCollection(movieIdVar,callback);
 }
 
-export {addCollectionToFavs ,deleteFavMovieCollectionData ,createFavCollection};
+export {addCollectionToFavs ,deleteFavMovieCollectionData ,createFavCollection ,createFavMovieCollection};

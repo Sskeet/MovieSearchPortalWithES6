@@ -1,12 +1,18 @@
 var jQuery = require("jquery");
-
+import {movieStore } from "../reducer/store";
+import {
+	POPULATE_MOVIE_LIST,
+	POPULATE_FAV_MOVIE_LIST,
+	POPULATE_SEARCH_MOVIE_RESULTS
+} from "../reducer/action";
 
 //fetching data from server 1st step 
 function getTopMovie(pageNo,callback){
 	fetch("https://api.themoviedb.org/3/movie/popular?api_key=7520477c96fad381a44633a2b7596a01&language=en-US&page="+pageNo)
 		.then((res) => {
 			res.json().then((data)=>{
-				callback(data);
+				movieStore.dispatch({type: POPULATE_MOVIE_LIST, data: data});
+				// callback(data);
 			})
 				.catch((err) => {
 					console.log("something went wrong while calling get yop movie data");
@@ -18,7 +24,8 @@ function movieSearch(searchText,callback){
 	fetch("https://api.themoviedb.org/3/search/movie?api_key=7520477c96fad381a44633a2b7596a01&language=en-US&query="+searchText+"&page=1&include_adult=false")
 		.then((resp) =>{
 			resp.json().then((data1)=>{
-				callback(data1);
+				movieStore.dispatch({type: POPULATE_SEARCH_MOVIE_RESULTS, data: data1});
+				// callback(data1);
 			});
 		})
 		.catch((err) => {
@@ -26,28 +33,15 @@ function movieSearch(searchText,callback){
 		});
 }
 
-function getFavMovieCollectionData(){
+function getFavMovieCollectionData(callback){
 	fetch("http://localhost:3001/db")
 		.then((res2) => {
 			res2.json().then((data2) => {
-				let createFavCollectionHtml = "";
-				Object.keys(data2).map(function(objectKey, index) { 
-					var value = data2[objectKey];
-					jQuery.each( value, function( j , value1 ) { 
-						// console.log(value1);
-						createFavCollectionHtml += `
-                    <div class="col-2" id= ${value1.id}>
-                        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/${value1.poster_path}" alt="${value1.original_title}" class="img-thumbnail rounded">
-                        <div class="buttom-panel text-center mt-1">
-                            <button type="button" class="removeFavCollectionButton btn btn-success" movieGenre="${objectKey}" movieId="${value1.id}">Remove</button>
-                        </div>
-                    </div>`;
-					});
-				});
-				jQuery("#" + "favMovies").html(createFavCollectionHtml);
+				movieStore.dispatch({type: POPULATE_FAV_MOVIE_LIST, data: data2});
 			});
 		});
 }
+
 
 function addCollection(movieIdVar,callback){
 	// console.log("this is data!!!!!", movieIdVar);
@@ -59,5 +53,5 @@ function addCollection(movieIdVar,callback){
 		});
 }
 
-export {getTopMovie ,movieSearch, getFavMovieCollectionData , addCollection};
+export {getTopMovie ,movieSearch, getFavMovieCollectionData , addCollection };
 
