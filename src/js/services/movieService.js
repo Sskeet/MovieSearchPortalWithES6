@@ -1,4 +1,3 @@
-var jQuery = require("jquery");
 import {movieStore } from "../reducer/store";
 import {
 	POPULATE_MOVIE_LIST,
@@ -15,7 +14,7 @@ function getTopMovie(pageNo,callback){
 				// callback(data);
 			})
 				.catch((err) => {
-					console.log("something went wrong while calling get yop movie data");
+					alert("something went wrong while calling get yop movie data");
 				});
 		});
 }
@@ -29,7 +28,7 @@ function movieSearch(searchText,callback){
 			});
 		})
 		.catch((err) => {
-			console.log("error in fetching movie data");
+			alert("error in fetching movie data");
 		});
 }
 
@@ -44,7 +43,6 @@ function getFavMovieCollectionData(callback){
 
 
 function addCollection(movieIdVar,callback){
-	// console.log("this is data!!!!!", movieIdVar);
 	fetch(`https://api.themoviedb.org/3/movie/${movieIdVar}?api_key=7520477c96fad381a44633a2b7596a01&language=en-US`)
 		.then((res3)=> {
 			res3.json().then((data3) =>{

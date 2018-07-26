@@ -3,7 +3,6 @@ import {
     POPULATE_MOVIE_LIST,
     POPULATE_FAV_MOVIE_LIST,
     ADD_MOVIE_TO_COLLECTION,
-    DELETE_MOVIE_FROM_COLLECTION,
     POPULATE_SEARCH_MOVIE_RESULTS,
     LOAD_MORE_MOVIE,
 } from "./action";
@@ -18,7 +17,6 @@ const initialState={
     topMovies:[],
     favMovies:[],
     searchMovieDetails: [],
-    delMovieData: {},
     curAction:""
 }
 
@@ -34,33 +32,27 @@ switch(action.type)
         case POPULATE_FAV_MOVIE_LIST:
             return {
                 ...state,
-                topMovies:action.data,
+                favMovies:action.data,
                 curAction:action.type
                 }
         case ADD_MOVIE_TO_COLLECTION:
             return {
                 ...state,
+                favMovies:action.data,
+                curAction:action.type
+            }
+        case POPULATE_SEARCH_MOVIE_RESULTS:
+            return {
+                ...state,
+                searchMovieDetails:action.data,
+                curAction:action.type
+            }
+        case LOAD_MORE_MOVIE:
+            return {
+                ...state,
                 topMovies:action.data,
                 curAction:action.type
             }
-        case DELETE_MOVIE_FROM_COLLECTION:
-        return {
-            ...state,
-            topMovies:action.data,
-            curAction:action.type
-        }
-        case POPULATE_SEARCH_MOVIE_RESULTS:
-        return {
-            ...state,
-            topMovies:action.data,
-            curAction:action.type
-        }
-        case LOAD_MORE_MOVIE:
-        return {
-            ...state,
-            topMovies:action.data,
-            curAction:action.type
-        }
         default:
             return state;
     }
@@ -82,13 +74,13 @@ function render(){
         createMovieList(currState.topMovies);
         break;
         case POPULATE_SEARCH_MOVIE_RESULTS:
-        createMovieSearchPanel(currState.topMovies);
+        createMovieSearchPanel(currState.searchMovieDetails);
         break;
         case POPULATE_FAV_MOVIE_LIST:
-        createFavMovieCollection(currState.topMovies);
+        createFavMovieCollection(currState.favMovies);
         break;
         case ADD_MOVIE_TO_COLLECTION:
-        createCollection(currState.topMovies);
+        createCollection(currState.favMovies);
         break;
         default:
         return null;
