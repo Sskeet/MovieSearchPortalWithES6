@@ -1,4 +1,4 @@
-var jQuery = require('jquery');
+var jQuery = require("jquery");
 import {movieStore } from "../reducer/store";
 import {
 	POPULATE_MOVIE_LIST,

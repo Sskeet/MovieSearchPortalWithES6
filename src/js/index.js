@@ -12,7 +12,6 @@ import { favMovieCollectionEventListner } from "../js/favMovieCollection/favMovi
 jQuery(document).ready(function(){
 	getTopMovie(1,createMovieList);
 	getFavMovieCollectionData();
-	eventListner();
 	loadMovieEventListner();
 	searchEventListner();
 	favMovieCollectionEventListner();

@@ -59,12 +59,6 @@ switch(action.type)
                 searchMovieDetails:action.data,
                 curAction:action.type
             }
-        // case LOAD_MORE_MOVIE:
-        //     return {
-        //         ...state,
-        //         topMovies:action.data,
-        //         curAction:action.type
-        //     }
         default:
             return null;
     }
