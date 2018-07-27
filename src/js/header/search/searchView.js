@@ -13,6 +13,7 @@ function createMovieSearchPanel(resp){
 	jQuery("#" + "searchSection").append(showMovieSearchPanelHtml);
 }
 
+
 export {createMovieSearchPanel};
 
 

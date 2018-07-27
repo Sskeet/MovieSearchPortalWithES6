@@ -1,3 +1,4 @@
+var jQuery = require('jquery');
 import {movieStore } from "../reducer/store";
 import {
 	POPULATE_MOVIE_LIST,
@@ -51,5 +52,31 @@ function addCollection(movieIdVar,callback){
 		});
 }
 
-export {getTopMovie ,movieSearch, getFavMovieCollectionData , addCollection };
+function createFavCollection(data,callback){
+	let collectionName= jQuery("#exampleFormControlSelect1").val();
+	jQuery.ajax({
+		type: "POST",
+		data: JSON.stringify(data),
+		dataType:"json",
+		contentType : "application/json",
+		url: `http://localhost:3001/${collectionName}`,
+		success: function(){
+			//movieStore.dispatch({type: MOVIE_ADDED_TO_DB, data: data});
+			alert("Data Added Successfully");
+			getFavMovieCollectionData();
+		},
+	});
+}
+
+function deleteFavMovieCollectionData(favMovieIdVar,movieGenre) {
+	jQuery.ajax({
+		url: `http://localhost:3001/${movieGenre}/${favMovieIdVar}`,
+		type: "DELETE",
+		success: function(data) {
+			getFavMovieCollectionData(data);
+		}
+	});   
+}
+
+export {getTopMovie ,movieSearch, getFavMovieCollectionData , addCollection ,createFavCollection,deleteFavMovieCollectionData};
 

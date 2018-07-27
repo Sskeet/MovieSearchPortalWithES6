@@ -4,12 +4,11 @@ import {
     POPULATE_FAV_MOVIE_LIST,
     ADD_MOVIE_TO_COLLECTION,
     POPULATE_SEARCH_MOVIE_RESULTS,
-    LOAD_MORE_MOVIE,
 } from "./action";
-import { createMovieList } from "../popularMovies/popularMovie";
-import { createMovieSearchPanel } from "../header/search/search";
-import { createFavMovieCollection } from "../favMovieCollection/favMovieCollection";
-import { createCollection } from "../popupModal/popupModal";
+import { createMovieList } from "../popularMovies/popularMovieView";
+import { createMovieSearchPanel } from "../header/search/searchView";
+import { createFavMovieCollection } from "../favMovieCollection/favMovieCollectionView";
+import { createCollection } from "../popupModal/popupModalView";
 
 
 //reducer - step2 - state n action 
@@ -20,41 +19,54 @@ const initialState={
     curAction:""
 }
 
+
 const moviePortalReducer = (state =initialState,action) => {
 switch(action.type)
     {    
         case POPULATE_MOVIE_LIST:
+            // const popMovies = [...state.topMovies, ...action.POPULATE_MOVIE_LIST];
+            // state.topMovies = popMovies;
+            // return popMovies;
             return {
                 ...state,
                 topMovies:action.data,
                 curAction:POPULATE_MOVIE_LIST
                 }
         case POPULATE_FAV_MOVIE_LIST:
+            // const popFavMovies = [...state.favMovies, ...action.POPULATE_FAV_MOVIE_LIST];
+            // state.favMovies = popFavMovies;
+            // return popFavMovies;
             return {
                 ...state,
                 favMovies:action.data,
                 curAction:action.type
                 }
         case ADD_MOVIE_TO_COLLECTION:
+            // const addMoviToColl = [...state.favMovies, ...action.ADD_MOVIE_TO_COLLECTION];
+            // state.favMovies = addMoviToColl;
+            // return addMoviToColl;
             return {
                 ...state,
                 favMovies:action.data,
                 curAction:action.type
             }
         case POPULATE_SEARCH_MOVIE_RESULTS:
+            // const popSeaMovRes = [...state.searchMovieDetails, ...action.POPULATE_SEARCH_MOVIE_RESULTS];
+            // state.searchMovieDetails = popSeaMovRes;
+            // return popSeaMovRes;
             return {
                 ...state,
                 searchMovieDetails:action.data,
                 curAction:action.type
             }
-        case LOAD_MORE_MOVIE:
-            return {
-                ...state,
-                topMovies:action.data,
-                curAction:action.type
-            }
+        // case LOAD_MORE_MOVIE:
+        //     return {
+        //         ...state,
+        //         topMovies:action.data,
+        //         curAction:action.type
+        //     }
         default:
-            return state;
+            return null;
     }
 }
 
@@ -88,16 +100,6 @@ function render(){
 }
 
 
-// movieStore.subscribe(() => {
-//     console.log(movieStore.getState());
-//     const currState = movieStore.getState();
-//     switch(currState.action){
-//         case POPULATE_MOVIE_LIST:
-//         createMovieList(currState.topMovies);
-//         case POPULATE_SEARCH_MOVIE_RESULTS:
-//         createMovieSearchPanel(currState.topMovies);
-//     }
-// });
 
   
 

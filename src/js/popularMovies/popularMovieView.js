@@ -15,4 +15,5 @@ function createMovieList(res){
 	jQuery("#topMoviesContainer").append(showTopMoviesHtml);
 }
 
+
 export {createMovieList};

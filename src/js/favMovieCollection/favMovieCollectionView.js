@@ -1,5 +1,5 @@
 var jQuery = require("jquery");
-import { addCollection ,getFavMovieCollectionData } from "../services/movieService";
+import { addCollection } from "../services/movieService";
 
 
 function createFavMovieCollection(res2){
@@ -21,34 +21,34 @@ function createFavMovieCollection(res2){
 	jQuery("#" + "favMovies").html(createFavCollectionHtml);
 }
 
-function createFavCollection(data,callback){
-	let collectionName= jQuery("#exampleFormControlSelect1").val();
-	jQuery.ajax({
-		type: "POST",
-		data: JSON.stringify(data),
-		dataType:"json",
-		contentType : "application/json",
-		url: `http://localhost:3001/${collectionName}`,
-		success: function(){
-			//movieStore.dispatch({type: MOVIE_ADDED_TO_DB, data: data});
-			alert("Data Added Successfully");
-			getFavMovieCollectionData();
-		},
-	});
-}
+// function createFavCollection(data,callback){
+// 	let collectionName= jQuery("#exampleFormControlSelect1").val();
+// 	jQuery.ajax({
+// 		type: "POST",
+// 		data: JSON.stringify(data),
+// 		dataType:"json",
+// 		contentType : "application/json",
+// 		url: `http://localhost:3001/${collectionName}`,
+// 		success: function(){
+// 			//movieStore.dispatch({type: MOVIE_ADDED_TO_DB, data: data});
+// 			alert("Data Added Successfully");
+// 			getFavMovieCollectionData();
+// 		},
+// 	});
+// }
 
-function deleteFavMovieCollectionData(favMovieIdVar,movieGenre) {
-	jQuery.ajax({
-		url: `http://localhost:3001/${movieGenre}/${favMovieIdVar}`,
-		type: "DELETE",
-		success: function(data) {
-			getFavMovieCollectionData(data);
-		}
-	});   
-}
+// function deleteFavMovieCollectionData(favMovieIdVar,movieGenre) {
+// 	jQuery.ajax({
+// 		url: `http://localhost:3001/${movieGenre}/${favMovieIdVar}`,
+// 		type: "DELETE",
+// 		success: function(data) {
+// 			getFavMovieCollectionData(data);
+// 		}
+// 	});   
+// }
 
 function addCollectionToFavs(movieIdVar,callback){
 	addCollection(movieIdVar,callback);
 }
 
-export {addCollectionToFavs ,deleteFavMovieCollectionData ,createFavCollection ,createFavMovieCollection};
+export {addCollectionToFavs ,createFavMovieCollection};
