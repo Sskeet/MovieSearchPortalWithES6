@@ -25,8 +25,10 @@ switch(action.type)
     {    
         case POPULATE_MOVIE_LIST:
             // const popMovies = [...state.topMovies, ...action.POPULATE_MOVIE_LIST];
-            // state.topMovies = popMovies;
-            // return popMovies;
+            // return{
+            //     ...state,
+            //     topMovies: popMovies
+            // }
             return {
                 ...state,
                 topMovies:action.data,
@@ -94,7 +96,5 @@ function render(){
 }
 
 
-
-  
 
 export { movieStore }

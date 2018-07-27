@@ -35,3 +35,36 @@ body  {
   .footer a:hover {
     color: rgb(201, 190, 97);
   }
+
+
+//   @media only screen and (max-width: 767px) {
+//     .middleSection ,.bottomSection {
+//         flex-wrap: wrap;
+//     }
+//     .middleSection div .bottomSection div {
+//         flex:1 1 100%;
+//     }
+    
+// }
+
+// /* max-width: 991px */
+// @media only screen and (max-width: 991px) {
+//     .middleSection ,.bottomSection {
+//         flex-wrap: wrap;
+//     }
+//     .middleSection div .bottomSection div {
+//         flex:1 1 50%;
+//     }
+    
+// }
+// /* min-width:30em */
+// /* min-width: 200px */
+// @media only screen and (min-width: 200px) {
+//     .middleSection ,.bottomSection {
+//         flex-wrap: wrap;
+//     }
+//     .middleSection div .bottomSection div{
+//         flex:1 1 100%;
+//     }
+    
+// }
