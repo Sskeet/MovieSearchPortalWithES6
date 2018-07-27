@@ -26,7 +26,6 @@ function favMovieCollectionEventListner(){
 		e.preventDefault();
 		let favMovieIdVar = jQuery(this).attr("movieId");
 		let movieGenre = jQuery(this).attr("moviegenre");
-		// let favMovieCatergoyVar = jQuery(this).attr("value");
 		deleteFavMovieCollectionData(favMovieIdVar,movieGenre);
 	});
 }
