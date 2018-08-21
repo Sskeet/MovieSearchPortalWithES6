@@ -1,11 +1,12 @@
 import { createStore } from 'redux';
 import {
     POPULATE_MOVIE_LIST,
+    POPULATE_MOVIE_LIST1,
     POPULATE_FAV_MOVIE_LIST,
     ADD_MOVIE_TO_COLLECTION,
     POPULATE_SEARCH_MOVIE_RESULTS,
 } from "./action";
-import { createMovieList } from "../popularMovies/popularMovieView";
+import { createMovieList , movieList} from "../popularMovies/popularMovieView";
 import { createMovieSearchPanel } from "../header/search/searchView";
 import { createFavMovieCollection } from "../favMovieCollection/favMovieCollectionView";
 import { createCollection } from "../popupModal/popupModalView";
@@ -14,6 +15,7 @@ import { createCollection } from "../popupModal/popupModalView";
 //reducer - step2 - state n action 
 const initialState={
     topMovies:[],
+    topMovies1:[],
     favMovies:[],
     searchMovieDetails: [],
     curAction:""
@@ -24,15 +26,16 @@ const moviePortalReducer = (state =initialState,action) => {
 switch(action.type)
     {    
         case POPULATE_MOVIE_LIST:
-            // const popMovies = [...state.topMovies, ...action.POPULATE_MOVIE_LIST];
-            // return{
-            //     ...state,
-            //     topMovies: popMovies
-            // }
             return {
                 ...state,
                 topMovies:action.data,
                 curAction:POPULATE_MOVIE_LIST
+                }
+        case POPULATE_MOVIE_LIST1:
+            return {
+                ...state,
+                topMovies1:action.data,
+                curAction:POPULATE_MOVIE_LIST1
                 }
         case POPULATE_FAV_MOVIE_LIST:
             // const popFavMovies = [...state.favMovies, ...action.POPULATE_FAV_MOVIE_LIST];
@@ -80,6 +83,9 @@ function render(){
     switch(currState.curAction){
         case POPULATE_MOVIE_LIST:
         createMovieList(currState.topMovies);
+        break;
+        case POPULATE_MOVIE_LIST1:
+        movieList(currState.topMovies1);
         break;
         case POPULATE_SEARCH_MOVIE_RESULTS:
         createMovieSearchPanel(currState.searchMovieDetails);

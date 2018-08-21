@@ -2,6 +2,7 @@ var jQuery = require("jquery");
 import {movieStore } from "../reducer/store";
 import {
 	POPULATE_MOVIE_LIST,
+	POPULATE_MOVIE_LIST1,
 	POPULATE_FAV_MOVIE_LIST,
 	POPULATE_SEARCH_MOVIE_RESULTS
 } from "../reducer/action";
@@ -16,6 +17,19 @@ function getTopMovie(pageNo,callback){
 			})
 				.catch((err) => {
 					alert("something went wrong while calling get yop movie data");
+				});
+		});
+}
+
+function getTopMovie1(pageNo,callback){
+	fetch("https://api.themoviedb.org/3/movie/popular?api_key=7520477c96fad381a44633a2b7596a01&language=en-US&page="+pageNo)
+		.then((res) => {
+			res.json().then((data)=>{
+				movieStore.dispatch({type: POPULATE_MOVIE_LIST1, data: data});
+				// callback(data);
+			})
+				.catch((err) => {
+					alert("something something");
 				});
 		});
 }
@@ -78,5 +92,5 @@ function deleteFavMovieCollectionData(favMovieIdVar,movieGenre) {
 	});   
 }
 
-export {getTopMovie ,movieSearch, getFavMovieCollectionData , addCollection ,createFavCollection,deleteFavMovieCollectionData};
+export {getTopMovie ,movieSearch, getFavMovieCollectionData , addCollection ,createFavCollection,deleteFavMovieCollectionData,getTopMovie1};
 
