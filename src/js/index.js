@@ -15,16 +15,6 @@ jQuery(document).ready(function(){
 	loadMovieEventListner();
 	searchEventListner();
 	favMovieCollectionEventListner();
-
-	// $('.btnNext').click(function(){
-	// 	console.log(111);
-	// 	$('.nav-tabs > .active').next('li').find('a').trigger('click');
-	//   });
-	  
-	// 	$('.btnPrevious').click(function(){
-	// 	$('.nav-tabs > .active').prev('li').find('a').trigger('click');
-	//   });
-	
 });
 
 

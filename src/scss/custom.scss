@@ -39,6 +39,16 @@ body  {
   form.form-inline.text-center.search1 {
     margin-left: 30%;
 }
+
+#topMoviesContainer2 {
+  flex-wrap: nowrap;
+}
+
+.scrollMovie {
+  border: 1px solid black;
+  width: 100px;
+  overflow: auto;
+}
   //making this website responsive
   // Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) {

@@ -12,12 +12,12 @@ function createMovieList(res){
       </div>
       `;
 	});
-	jQuery("#topMoviesContainer").append(showTopMoviesHtml);
+  jQuery("#topMoviesContainer").append(showTopMoviesHtml);
 }
 
 
 function movieList(res){
-  console.log(111);
+  // console.log(111);
   let showTopMoviesHtml ="";
   res.results.map(movieRecod => {
     showTopMoviesHtml += `
@@ -27,6 +27,8 @@ function movieList(res){
     `;
   });
   jQuery("#topMoviesContainer2").append(showTopMoviesHtml);
+  jQuery(".movieContainer").first().addClass("firstActive");
+  jQuery(".movieContainer").last().addClass("lastActive");
 }
 
 export {createMovieList,movieList};

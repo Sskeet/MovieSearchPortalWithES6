@@ -28,6 +28,14 @@ function favMovieCollectionEventListner(){
 		let movieGenre = jQuery(this).attr("moviegenre");
 		deleteFavMovieCollectionData(favMovieIdVar,movieGenre);
 	});
+
+	jQuery(document).on("click",".btnNext",function(e){
+		e.preventDefault();
+		console.log(111);	
+		jQuery( "#topMoviesContainer2" ).scrollLeft( 300 );
+		jQuery('#topMoviesContainer2').animate({"left": "+=50px"}, "slow");
+		// $( ".block" ).animate({ "left": "+=50px" }, "slow" );
+	});
 }
 
 export {favMovieCollectionEventListner};
