@@ -32,8 +32,9 @@ function favMovieCollectionEventListner(){
 	jQuery(document).on("click",".btnNext",function(e){
 		e.preventDefault();
 		console.log(111);	
-		jQuery( "#topMoviesContainer2" ).scrollLeft( 300 );
-		jQuery('#topMoviesContainer2').animate({"left": "+=50px"}, "slow");
+		// jQuery( "#topMoviesContainer2" ).scrollLeft( 300 );
+		// jQuery('#topMoviesContainer2').animate({"left": "+=50px"}, "slow");
+		jQuery('#topMoviesContainer2').animate({scrollLeft: "+=50"}, 1000);
 		// $( ".block" ).animate({ "left": "+=50px" }, "slow" );
 	});
 }

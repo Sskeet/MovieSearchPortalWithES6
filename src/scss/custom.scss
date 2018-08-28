@@ -51,18 +51,44 @@ body  {
 }
   //making this website responsive
   // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-
-// }
+@media (min-width: 575.98px) {
+  #topMoviesContainer{
+    display:flex;
+    .movieContainer{
+      flex-wrap: wrap;
+    }
+  }
+}
 
 // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) { ... }
+@media (min-width: 768px) { 
+  #topMoviesContainer{
+    display:flex;
+    .movieContainer{
+      flex-wrap: wrap;
+    }
+  }
+ }
 
 // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) { ... }
+@media (min-width: 992px) { 
+  #topMoviesContainer{
+    display:flex;
+    .movieContainer{
+      flex-wrap: wrap;
+    }
+  }
+ }
 
 // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) { ... }
+@media (min-width: 1200px) { 
+  #topMoviesContainer{
+    display:flex;
+    .movieContainer{
+      flex-wrap: wrap;
+    }
+  }
+ }
 
 
 //   @media only screen and (max-width: 767px) {
