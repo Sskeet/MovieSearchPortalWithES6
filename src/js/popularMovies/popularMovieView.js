@@ -31,4 +31,7 @@ function movieList(res){
   jQuery(".movieContainer").last().addClass("lastActive");
 }
 
+
+
+
 export {createMovieList,movieList};

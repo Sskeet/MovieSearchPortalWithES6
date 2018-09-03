@@ -29,14 +29,48 @@ function favMovieCollectionEventListner(){
 		deleteFavMovieCollectionData(favMovieIdVar,movieGenre);
 	});
 
-	jQuery(document).on("click",".btnNext",function(e){
-		e.preventDefault();
-		console.log(111);	
-		// jQuery( "#topMoviesContainer2" ).scrollLeft( 300 );
-		// jQuery('#topMoviesContainer2').animate({"left": "+=50px"}, "slow");
-		jQuery('#topMoviesContainer2').animate({scrollLeft: "+=50"}, 1000);
-		// $( ".block" ).animate({ "left": "+=50px" }, "slow" );
-	});
+	// jQuery(document).on("click",".btnNext",function(e){
+	// 	e.preventDefault();
+	// 	console.log(111);
+	// 	scrollHorizontally('#topMoviesContainer', 'next', true);
+	// 	// jQuery('#topMoviesContainer2').animate({scrollLeft: "+=50"}, 1000);
+		
+	// });
 }
+
+// function scrollHorizontally(containerId, moveTO, nextCall, serached){
+	
+// 	const sectionElem = jQuery(containerId);
+// 	console.log(222,sectionElem);
+// 	const currentScroll = parseInt(sectionElem.scrollLeft(), 10);
+// 	console.log(222,currentScroll);
+// 	const width = Math.floor(sectionElem.outerWidth());
+// 	console.log(222,width); 
+//     const { scrollWidth } = sectionElem.get(0);
+//     if (moveTO === 'next') {
+//         sectionElem.animate({ scrollLeft: currentScroll + 800 }, 800);
+//     } else {
+//         sectionElem.animate({ scrollLeft: currentScroll - 800 }, 800);
+//     }
+//     if (nextCall) {
+//         if (scrollWidth - currentScroll === width) {
+//             const pagenumber = parseInt(sectionElem.attr('pagenumber'), 10) + 1;
+//             const userDataFlag = localStorage.getItem('loggedUserInfo');
+//             if (serached) {
+//                 const movieName = sectionElem.attr('moveName');
+//                 getSearchedMovie(movieName, pagenumber, (data) => {
+//                     createTopMoviesList('searchedMoviesContainer', data, userDataFlag);
+//                 });
+//             } else {
+//                 getMovieRecords(pagenumber, (data) => {
+//                     createTopMoviesList('topMoviesContainer', data, userDataFlag);
+//                 });
+//             }
+
+//             sectionElem.attr('pagenumber', pagenumber);
+//         }
+//     }
+
+// }
 
 export {favMovieCollectionEventListner};
