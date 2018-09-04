@@ -10,7 +10,8 @@ function createMovieSearchPanel(resp){
         </div>
     `; });
 	jQuery("#" + "searchSection").html("");
-	jQuery("#" + "searchSection").append(showMovieSearchPanelHtml);
+    jQuery("#" + "searchSection").append(showMovieSearchPanelHtml);
+    jQuery("#" + "searchSection").append("<input type='button' class='.NxtButton' />");
 }
 
 
