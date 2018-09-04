@@ -1,5 +1,5 @@
 module.exports = {
-    app: function(){
+    sayHello: function(){
         return 'hello';
     }
 }
