@@ -30,7 +30,21 @@ function scrollHorizontally(containerId, moveTO, nextCall){
     }
     if (nextCall) {
         if (scrollWidth - currentScroll === width) {
-            const pagenumber = parseInt(sectionElem.attr('pagenumber'), 10) + 1;
+			const pagenumber = parseInt(sectionElem.attr('pagenumber'), 10) + 1;
+			
+			// if (serached) {
+            //     const movieName = sectionElem.attr('moveName');
+            //     getSearchedMovie(movieName, pagenumber, (data) => {
+            //         createTopMoviesList('searchedMoviesContainer', data, userDataFlag);
+            //     });
+            // } else {
+            //     getMovieRecords(pagenumber, (data) => {
+            //         createTopMoviesList('topMoviesContainer', data, userDataFlag);
+            //     });
+            // }
+
+
+
 			getTopMovie1(pagenumber, (data) => {
 				movieList('topMoviesContainer', data, userDataFlag);
 			});
