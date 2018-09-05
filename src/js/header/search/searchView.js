@@ -11,13 +11,9 @@ function createMovieSearchPanel(resp){
     `; });
 	jQuery("#" + "searchSection").html("");
     jQuery("#" + "searchSection").append(showMovieSearchPanelHtml);
-    jQuery("#" + "searchSection1").append("<button type='button' class='btn btn-primary .btnNext1'>Next</button>");
+    jQuery("#" + "searchSection1").html("<button class='btn btn-primary' id='btnNext1'>Next</button>");
 }
 
-jQuery(document).on("click",".btnNext1",function(e){
-    e.preventDefault();
-    scrollHorizontally('#searchSection', 'next', true);
-});
 
 export {createMovieSearchPanel};
 

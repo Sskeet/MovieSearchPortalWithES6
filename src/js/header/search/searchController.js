@@ -11,6 +11,4 @@ function searchEventListner(){
 	});
 }
 
-
-
 export {searchEventListner};

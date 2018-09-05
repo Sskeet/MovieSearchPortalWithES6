@@ -8,7 +8,6 @@ describe('App',function(){
    });
 
    it('should return type of string',function(){
-       let 
        assert.typeOf(sayHello(),'number');
    });
 });
