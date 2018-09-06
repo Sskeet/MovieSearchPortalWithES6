@@ -19,7 +19,6 @@ function loadMovieEventListner(){
 
 	jQuery(document).on("click","#btnNext1",function(e){
 		e.preventDefault();
-		console.log("coming here");
 		scrollHorizontally('#searchSection', 'next', true , true);
 	});
 }
@@ -49,11 +48,6 @@ function scrollHorizontally(containerId, moveTO, nextCall , searched){
 				
 				sectionElem.attr('pagenumber', pagenumber);
             }
-
-			// getTopMovie1(pagenumber, (data) => {
-			// 	movieList('topMoviesContainer', data, userDataFlag);
-			// });
-            // sectionElem.attr('pagenumber', pagenumber);
         }
     }
 
